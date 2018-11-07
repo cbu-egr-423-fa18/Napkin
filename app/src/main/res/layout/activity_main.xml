@@ -83,8 +83,8 @@
                     android:orientation="vertical">
 
                     <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_width="55dp"
+                        android:layout_height="50dp"
                         android:layout_gravity="center_horizontal"
                         android:src="@drawable/food_fork_drink" />
 
@@ -121,8 +121,8 @@
                     android:orientation="vertical">
 
                     <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_width="52dp"
+                        android:layout_height="50dp"
                         android:layout_gravity="center_horizontal"
                         android:src="@drawable/finance" />
 
@@ -162,8 +162,8 @@
                     android:orientation="vertical">
 
                     <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
                         android:layout_gravity="center_horizontal"
                         android:src="@drawable/school" />
 
@@ -200,8 +200,8 @@
                     android:orientation="vertical">
 
                     <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
                         android:layout_gravity="center_horizontal"
                         android:src="@drawable/beaker" />
 
