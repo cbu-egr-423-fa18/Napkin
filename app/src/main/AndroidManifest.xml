@@ -19,6 +19,12 @@
         </activity>
         <activity android:name=".CalculatorActivity">
         </activity>
+        <activity android:name=".FinanceActivity">
+        </activity>
+        <activity android:name=".SchoolActivity">
+        </activity>
+        <activity android:name=".SalesActivity">
+        </activity>
     </application>
 
 </manifest>

@@ -53,6 +53,14 @@ public class LifestyleActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+        cardView = (CardView) mainGrid.getChildAt(1);
+        cardView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(LifestyleActivity.this,SalesActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 }
 
