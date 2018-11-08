@@ -142,9 +142,7 @@
                 android:layout_alignParentStart="true"
                 android:layout_below="@+id/hourlyPayOutputTitle"
                 android:ems="10"
-                android:inputType="numberDecimal"
-                android:textColor="@android:color/darker_gray"
-                tools:text="$0.00" />
+                android:inputType="textPersonName" />
 
             <TextView
                 android:id="@+id/annualPayOutputTitle"
@@ -162,9 +160,7 @@
                 android:layout_alignParentStart="true"
                 android:layout_below="@+id/annualPayOutputTitle"
                 android:ems="10"
-                android:inputType="numberDecimal"
-                android:textColor="@android:color/darker_gray"
-                tools:text="$0.00" />
+                android:inputType="textPersonName" />
 
         </RelativeLayout>
 
