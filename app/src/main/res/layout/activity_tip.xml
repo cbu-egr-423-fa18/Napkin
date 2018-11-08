@@ -15,7 +15,7 @@
         android:weightSum="10">
 
         <RelativeLayout
-                  android:layout_width="match_parent"
+            android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="4">
             android:background="@color/white"
@@ -40,7 +40,7 @@
                 android:layout_marginTop="11dp"
                 android:background="@color/cardview_shadow_end_color"
                 android:fontFamily="casual"
-                android:text="Sales Calculator"
+                android:text="Tip Calculator"
                 android:textAlignment="center"
                 android:textAllCaps="false"
                 android:textAppearance="@style/TextAppearance.AppCompat.Caption"
@@ -81,31 +81,31 @@
                     android:orientation="vertical" >
 
                     <TextView
-                        android:id="@+id/initialPriceText"
+                        android:id="@+id/waysSplitText"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Initial Price:"
+                        android:text="Number of Ways Split:"
                         android:textColor="@android:color/black"
                         android:textSize="18sp" />
 
                     <EditText
-                        android:id="@+id/initialPrice"
+                        android:id="@+id/waysSplit"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:ems="10"
-                        android:hint="$0.00"
-                        android:inputType="numberDecimal" />
+                        android:hint="0"
+                        android:inputType="number" />
 
                     <TextView
-                        android:id="@+id/salePercentage"
+                        android:id="@+id/tipPercentageText"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Sale Percentage:"
+                        android:text="Tip Percentage:"
                         android:textColor="@android:color/black"
                         android:textSize="18sp" />
 
                     <EditText
-                        android:id="@+id/salePercentage"
+                        android:id="@+id/tipPercentage"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:ems="10"
@@ -113,20 +113,36 @@
                         android:inputType="numberDecimal" />
 
                     <TextView
-                        android:id="@+id/itemQuantity"
+                        android:id="@+id/totalBillText"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Item Quantity:"
+                        android:text="Total Bill:"
                         android:textColor="@android:color/black"
                         android:textSize="18sp" />
 
                     <EditText
-                        android:id="@+id/itemQuantity"
+                        android:id="@+id/totalBill"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:ems="10"
-                        android:hint="0"
-                        android:inputType="number" />
+                        android:hint="$0.00"
+                        android:inputType="numberDecimal" />
+
+                    <TextView
+                        android:id="@+id/taxRateText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Tax Rate:"
+                        android:textColor="@android:color/black"
+                        android:textSize="18sp" />
+
+                    <EditText
+                        android:id="@+id/taxRate"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:hint="0.00%"
+                        android:inputType="numberDecimal" />
                 </LinearLayout>
             </ScrollView>
 
@@ -136,7 +152,7 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentStart="true"
                 android:layout_below="@+id/textView2"
-                android:text="Cost Per Item:"
+                android:text="Cost Per Person:"
                 android:textColor="@android:color/black"
                 android:textSize="18sp" />
 

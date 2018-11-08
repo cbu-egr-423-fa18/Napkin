@@ -32,7 +32,7 @@
                 android:text="TextView" />
 
             <TextView
-                android:id="@+id/salesCalculator"
+                android:id="@+id/tipCalculator"
                 android:layout_width="311dp"
                 android:layout_height="128dp"
                 android:layout_alignParentStart="true"
@@ -64,7 +64,7 @@
                 android:id="@+id/divider"
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:layout_below="@+id/salesCalculator"
+                android:layout_below="@+id/tipCalculator"
                 android:layout_alignParentStart="true"
                 android:background="?android:attr/listDivider" />
 
