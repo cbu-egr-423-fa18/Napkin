@@ -35,13 +35,12 @@
                 android:id="@+id/tipCalculator"
                 android:layout_width="311dp"
                 android:layout_height="128dp"
-                android:layout_alignParentStart="true"
                 android:layout_alignParentTop="true"
-                android:layout_marginStart="43dp"
-                android:layout_marginTop="10dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="11dp"
                 android:background="@color/cardview_shadow_end_color"
                 android:fontFamily="casual"
-                android:text="GPA Calculator"
+                android:text="Tip Calculator"
                 android:textAlignment="center"
                 android:textAllCaps="false"
                 android:textAppearance="@style/TextAppearance.AppCompat.Caption"
@@ -71,81 +70,108 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical" />
+                    android:orientation="vertical" >
+
+                    <TextView
+                        android:id="@+id/waysSplitText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Number of Ways Split:"
+                        android:textColor="@android:color/black"
+                        android:textSize="18sp" />
+
+                    <EditText
+                        android:id="@+id/waysSplit"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:hint="0"
+                        android:inputType="number" />
+
+                    <TextView
+                        android:id="@+id/tipPercentageText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Tip Percentage:"
+                        android:textColor="@android:color/black"
+                        android:textSize="18sp" />
+
+                    <EditText
+                        android:id="@+id/tipPercentage"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:hint="0.00%"
+                        android:inputType="numberDecimal" />
+
+                    <TextView
+                        android:id="@+id/totalBillText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Total Bill:"
+                        android:textColor="@android:color/black"
+                        android:textSize="18sp" />
+
+                    <EditText
+                        android:id="@+id/totalBill"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:hint="$0.00"
+                        android:inputType="numberDecimal" />
+
+                    <TextView
+                        android:id="@+id/taxRateText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Tax Rate:"
+                        android:textColor="@android:color/black"
+                        android:textSize="18sp" />
+
+                    <EditText
+                        android:id="@+id/taxRate"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:hint="0.00%"
+                        android:inputType="numberDecimal" />
+                </LinearLayout>
             </ScrollView>
 
             <TextView
-                android:id="@+id/numberOfClassesText"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentStart="true"
-                android:layout_below="@+id/textView"
-                android:text="Number of Classes:"
-                android:textColor="@android:color/black"
-                android:textSize="18sp" />
-
-            <Spinner
-                android:id="@+id/numberOfClasses"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_alignParentStart="true"
-                android:layout_below="@+id/numberOfClassesText"
-                android:entries="@array/numberOfClassesValue" />
-
-            <TextView
-                android:id="@+id/numberOfCreditsText"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentStart="true"
-                android:layout_below="@+id/tipCalculator"
-                android:text="Number of Credits:"
-                android:textColor="@android:color/black"
-                android:textSize="18sp" />
-
-            <EditText
-                android:id="@+id/numberOfCredits"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentStart="true"
-                android:layout_below="@+id/numberOfCreditsText"
-                android:ems="10"
-                android:hint="3"
-                android:inputType="number" />
-
-            <TextView
-                android:id="@+id/gradeOfClassText"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentStart="true"
-                android:layout_below="@+id/numberOfCredits"
-                android:text="Grade of Class:"
-                android:textColor="@android:color/black"
-                android:textSize="18sp" />
-
-            <Spinner
-                android:id="@+id/gradeOfClass"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_alignParentStart="true"
-                android:layout_below="@+id/gradeOfClassText"
-                android:entries="@array/gradeOfClassValue" />
-
-            <TextView
-                android:id="@+id/gpaText"
+                android:id="@+id/costPerItemText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentStart="true"
                 android:layout_below="@+id/textView2"
-                android:text="GPA:"
+                android:text="Cost Per Person:"
                 android:textColor="@android:color/black"
                 android:textSize="18sp" />
 
             <TextView
-                android:id="@+id/gpa"
+                android:id="@+id/costPerItem"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentStart="true"
-                android:layout_below="@+id/gpaText"
+                android:layout_below="@+id/costPerItemText"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/totalCostText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/costPerItem"
+                android:text="Total Cost:"
+                android:textColor="@android:color/black"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/totalCost"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/totalCostText"
                 android:textSize="18sp" />
 
         </RelativeLayout>

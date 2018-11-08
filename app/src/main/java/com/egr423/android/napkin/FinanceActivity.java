@@ -15,7 +15,7 @@ public class FinanceActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_lifestyle);
+        setContentView(R.layout.activity_finance);
         mainGrid = (GridLayout) findViewById(R.id.mainGrid);
         setSingleEvent(mainGrid);
     }
@@ -45,20 +45,30 @@ public class FinanceActivity extends AppCompatActivity {
 
     private void setSingleEvent(GridLayout mainGrid) {
         //Loop all child item of Main Grid
-        for (int i = 0; i < mainGrid.getChildCount(); i++) {
-            //You can see , all child item is CardView , so we just cast object to CardView
-            CardView cardView = (CardView) mainGrid.getChildAt(i);
-            final int finalI = i;
-            cardView.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-
-                    Intent intent = new Intent(FinanceActivity.this,CalculatorActivity.class);
-                    startActivity(intent);
-
-                }
-            });
+        CardView cardView = (CardView) mainGrid.getChildAt(0);
+        cardView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(FinanceActivity.this, InterestActivity.class);
+                startActivity(intent);
+            }
+        });
+        cardView = (CardView) mainGrid.getChildAt(1);
+        cardView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(FinanceActivity.this, MortageActivity.class);
+                startActivity(intent);
+            }
+        });
+        cardView = (CardView) mainGrid.getChildAt(2);
+        cardView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(FinanceActivity.this,AnnualPayActivity.class);
+                startActivity(intent);
+            }
+        });
         }
     }
-}
 
