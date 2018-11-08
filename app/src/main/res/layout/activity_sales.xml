@@ -144,6 +144,7 @@
                 android:layout_alignParentStart="true"
                 android:layout_marginBottom="125dp"
                 android:text="Cost Per Item:"
+                android:textColor="@android:color/black"
                 android:textSize="18sp" />
 
             <TextView
@@ -153,6 +154,7 @@
                 android:layout_alignParentStart="true"
                 android:layout_below="@+id/costPerItem"
                 android:text="Total Cost:"
+                android:textColor="@android:color/black"
                 android:textSize="18sp" />
 
             <TextView
