@@ -86,7 +86,7 @@
                         android:layout_width="55dp"
                         android:layout_height="50dp"
                         android:layout_gravity="center_horizontal"
-                        android:src="@drawable/food_fork_drink" />
+                        android:src="@drawable/finance" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -124,7 +124,7 @@
                         android:layout_width="52dp"
                         android:layout_height="50dp"
                         android:layout_gravity="center_horizontal"
-                        android:src="@drawable/finance" />
+                        android:src="@drawable/home" />
 
                     <TextView
                         android:layout_width="113dp"
@@ -165,7 +165,7 @@
                         android:layout_width="50dp"
                         android:layout_height="50dp"
                         android:layout_gravity="center_horizontal"
-                        android:src="@drawable/school" />
+                        android:src="@drawable/cash_usd" />
 
                     <TextView
                         android:layout_width="wrap_content"

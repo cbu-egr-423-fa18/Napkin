@@ -49,7 +49,7 @@ public class LifestyleActivity extends AppCompatActivity {
         cardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(LifestyleActivity.this, CalculatorActivity.class);
+                Intent intent = new Intent(LifestyleActivity.this, TipActivity.class);
                 startActivity(intent);
             }
         });
