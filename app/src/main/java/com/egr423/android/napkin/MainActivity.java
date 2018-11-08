@@ -49,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
             cardView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    Intent intent = new Intent(MainActivity.this,LifestyleActivity.class);
+                    Intent intent = new Intent(MainActivity.this, LifestyleActivity.class);
                     startActivity(intent);
 
                 }
@@ -58,7 +58,7 @@ public class MainActivity extends AppCompatActivity {
             cardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this,FinanceActivity.class);
+                Intent intent = new Intent(MainActivity.this, FinanceActivity.class);
                 startActivity(intent);
             }
             });
@@ -66,7 +66,7 @@ public class MainActivity extends AppCompatActivity {
             cardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this,SchoolActivity.class);
+                Intent intent = new Intent(MainActivity.this, SchoolActivity.class);
                 startActivity(intent);
             }
             });
