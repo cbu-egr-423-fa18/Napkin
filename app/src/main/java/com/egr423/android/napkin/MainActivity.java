@@ -54,6 +54,23 @@ public class MainActivity extends AppCompatActivity {
 
                 }
             });
+            cardView = (CardView) mainGrid.getChildAt(1);
+            cardView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this,FinanceActivity.class);
+                startActivity(intent);
+            }
+            });
+            cardView = (CardView) mainGrid.getChildAt(2);
+            cardView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this,SchoolActivity.class);
+                startActivity(intent);
+            }
+            });
+
     }
 
 }
