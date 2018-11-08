@@ -37,7 +37,7 @@
                 android:layout_height="128dp"
                 android:layout_alignParentTop="true"
                 android:layout_centerHorizontal="true"
-                android:layout_marginTop="15dp"
+                android:layout_marginTop="11dp"
                 android:background="@color/cardview_shadow_end_color"
                 android:fontFamily="casual"
                 android:text="Sales Calculator"
@@ -126,6 +126,44 @@
                         android:inputType="number" />
                 </LinearLayout>
             </ScrollView>
+
+            <TextView
+                android:id="@+id/costPerItemText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentStart="true"
+                android:layout_marginBottom="125dp"
+                android:text="Cost Per Item:"
+                android:textColor="@android:color/black"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/totalCostText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/costPerItem"
+                android:text="Total Cost:"
+                android:textColor="@android:color/black"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/costPerItem"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/costPerItemText"
+                android:layout_marginTop="-125dp"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/totalCost"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/totalCostText"
+                android:textSize="18sp" />
 
         </RelativeLayout>
 
