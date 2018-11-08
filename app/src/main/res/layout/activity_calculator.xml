@@ -21,6 +21,17 @@
             android:background="@color/white"
 
             <TextView
+                android:id="@+id/textView2"
+                android:layout_width="match_parent"
+                android:layout_height="8dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="0dp"
+                android:layout_marginTop="407dp"
+                android:background="@color/cardview_dark_background"
+                android:text="TextView" />
+
+            <TextView
                 android:id="@+id/textGrid"
                 android:layout_width="311dp"
                 android:layout_height="128dp"
@@ -41,12 +52,12 @@
             <TextView
                 android:id="@+id/textView"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="8dp"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentTop="true"
                 android:layout_marginStart="0dp"
                 android:layout_marginTop="70dp"
-                android:background="@android:color/background_dark"
+                android:background="@color/cardview_dark_background"
                 android:text="TextView" />
 
             <View
@@ -56,6 +67,20 @@
                 android:layout_below="@+id/textGrid"
                 android:layout_alignParentStart="true"
                 android:background="?android:attr/listDivider" />
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="322dp"
+                android:layout_above="@+id/textView2"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="0dp"
+                android:layout_marginBottom="-407dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical" />
+            </ScrollView>
 
         </RelativeLayout>
 
