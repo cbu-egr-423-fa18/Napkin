@@ -35,10 +35,9 @@
                 android:id="@+id/salesCalculator"
                 android:layout_width="311dp"
                 android:layout_height="128dp"
-                android:layout_alignParentStart="true"
                 android:layout_alignParentTop="true"
-                android:layout_marginStart="43dp"
-                android:layout_marginTop="10dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="11dp"
                 android:background="@color/cardview_shadow_end_color"
                 android:fontFamily="casual"
                 android:text="Sales Calculator"
@@ -96,8 +95,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:ems="10"
-                        android:inputType="numberDecimal"
-                        android:text="$0.00" />
+                        android:hint="$0.00"
+                        android:inputType="numberDecimal" />
 
                     <EditText
                         android:id="@+id/salePercentage"
@@ -114,8 +113,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:ems="10"
-                        android:inputType="numberDecimal"
-                        android:text="0.0%" />
+                        android:hint="0.00%"
+                        android:inputType="numberDecimal" />
 
                     <EditText
                         android:id="@+id/itemQuantity"
@@ -132,10 +131,46 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:ems="10"
-                        android:inputType="number"
-                        android:text="0" />
+                        android:hint="0"
+                        android:inputType="number" />
                 </LinearLayout>
             </ScrollView>
+
+            <TextView
+                android:id="@+id/costPerItemText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentStart="true"
+                android:layout_marginBottom="125dp"
+                android:text="Cost Per Item:"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/totalCostText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/costPerItem"
+                android:text="Total Cost:"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/costPerItem"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/costPerItemText"
+                android:layout_marginTop="-125dp"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/totalCost"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/totalCostText"
+                android:textSize="18sp" />
 
         </RelativeLayout>
 
