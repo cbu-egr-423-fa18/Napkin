@@ -85,6 +85,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="Initial Price:"
+                        android:textColor="@android:color/black"
                         android:textSize="18sp" />
 
                     <EditText
@@ -100,6 +101,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="Sale Percentage:"
+                        android:textColor="@android:color/black"
                         android:textSize="18sp" />
 
                     <EditText
@@ -115,6 +117,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="Item Quantity:"
+                        android:textColor="@android:color/black"
                         android:textSize="18sp" />
 
                     <EditText
@@ -131,11 +134,18 @@
                 android:id="@+id/costPerItemText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignParentBottom="true"
                 android:layout_alignParentStart="true"
-                android:layout_marginBottom="125dp"
+                android:layout_below="@+id/textView2"
                 android:text="Cost Per Item:"
                 android:textColor="@android:color/black"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/costPerItem"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/costPerItemText"
                 android:textSize="18sp" />
 
             <TextView
@@ -146,15 +156,6 @@
                 android:layout_below="@+id/costPerItem"
                 android:text="Total Cost:"
                 android:textColor="@android:color/black"
-                android:textSize="18sp" />
-
-            <TextView
-                android:id="@+id/costPerItem"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentStart="true"
-                android:layout_below="@+id/costPerItemText"
-                android:layout_marginTop="-125dp"
                 android:textSize="18sp" />
 
             <TextView
