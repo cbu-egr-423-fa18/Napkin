@@ -23,7 +23,7 @@
         </activity>
         <activity android:name=".SchoolActivity">
         </activity>
-        <activity android:name=".SalesActivity">
+        <activity android:name=".SalesActivity" android:windowSoftInputMode="adjustNothing">
         </activity>
     </application>
 

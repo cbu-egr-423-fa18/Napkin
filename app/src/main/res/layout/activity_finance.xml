@@ -91,7 +91,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Lifestyle"
+                        android:text="Interest Rate"
                         android:textAlignment="center"
                         android:textColor="@android:color/black"
                         android:textSize="18sp"
@@ -127,9 +127,9 @@
                         android:src="@drawable/finance" />
 
                     <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Finance"
+                        android:layout_width="113dp"
+                        android:layout_height="80dp"
+                        android:text="Mortage  "
                         android:textAlignment="center"
                         android:textColor="@android:color/black"
                         android:textSize="18sp"
@@ -170,7 +170,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="School"
+                        android:text="Annual Pay"
                         android:textAlignment="center"
                         android:textColor="@android:color/black"
                         android:textSize="18sp"
