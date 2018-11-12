@@ -86,7 +86,8 @@
                         android:layout_height="wrap_content"
                         android:ems="10"
                         android:hint="0"
-                        android:inputType="number" />
+                        android:inputType="number"
+                        android:text="4" />
 
                     <TextView
                         android:id="@+id/tipPercentageText"
@@ -102,7 +103,8 @@
                         android:layout_height="wrap_content"
                         android:ems="10"
                         android:hint="0.00%"
-                        android:inputType="numberDecimal" />
+                        android:inputType="numberDecimal"
+                        android:text="20.00" />
 
                     <TextView
                         android:id="@+id/totalBillText"
@@ -118,7 +120,8 @@
                         android:layout_height="wrap_content"
                         android:ems="10"
                         android:hint="$0.00"
-                        android:inputType="numberDecimal" />
+                        android:inputType="numberDecimal"
+                        android:text="20.00" />
 
                     <TextView
                         android:id="@+id/taxRateText"
@@ -134,12 +137,13 @@
                         android:layout_height="wrap_content"
                         android:ems="10"
                         android:hint="0.00%"
-                        android:inputType="numberDecimal" />
+                        android:inputType="numberDecimal"
+                        android:text="8.00" />
                 </LinearLayout>
             </ScrollView>
 
             <TextView
-                android:id="@+id/costPerItemText"
+                android:id="@+id/costPerPersonText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentStart="true"
@@ -149,29 +153,29 @@
                 android:textSize="18sp" />
 
             <TextView
-                android:id="@+id/costPerItem"
+                android:id="@+id/costPerPerson"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentStart="true"
-                android:layout_below="@+id/costPerItemText"
+                android:layout_below="@+id/costPerPersonText"
                 android:textSize="18sp" />
 
             <TextView
-                android:id="@+id/totalCostText"
+                android:id="@+id/totalCostOfBillText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentStart="true"
-                android:layout_below="@+id/costPerItem"
+                android:layout_below="@+id/costPerPerson"
                 android:text="Total Cost:"
                 android:textColor="@android:color/black"
                 android:textSize="18sp" />
 
             <TextView
-                android:id="@+id/totalCost"
+                android:id="@+id/totalCostOfBill"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentStart="true"
-                android:layout_below="@+id/totalCostText"
+                android:layout_below="@+id/totalCostOfBillText"
                 android:textSize="18sp" />
 
         </RelativeLayout>
