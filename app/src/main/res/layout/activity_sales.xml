@@ -86,10 +86,11 @@
                         android:layout_height="wrap_content"
                         android:ems="10"
                         android:hint="$0.00"
-                        android:inputType="numberDecimal" />
+                        android:inputType="numberDecimal"
+                        android:text="10.00" />
 
                     <TextView
-                        android:id="@+id/salePercentage"
+                        android:id="@+id/salePercentageText"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="Sale Percentage:"
@@ -102,10 +103,28 @@
                         android:layout_height="wrap_content"
                         android:ems="10"
                         android:hint="0.00%"
-                        android:inputType="numberDecimal" />
+                        android:inputType="numberDecimal"
+                        android:text="25.00" />
 
                     <TextView
-                        android:id="@+id/itemQuantity"
+                        android:id="@+id/salesTaxText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Sales Tax:"
+                        android:textColor="@android:color/black"
+                        android:textSize="18sp" />
+
+                    <EditText
+                        android:id="@+id/salesTax"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:hint="0.00%"
+                        android:inputType="numberDecimal"
+                        android:text="8.00" />
+
+                    <TextView
+                        android:id="@+id/itemQuantityText"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="Item Quantity:"
@@ -118,7 +137,9 @@
                         android:layout_height="wrap_content"
                         android:ems="10"
                         android:hint="0"
-                        android:inputType="number" />
+                        android:inputType="number"
+                        android:text="2" />
+
                 </LinearLayout>
             </ScrollView>
 
@@ -138,6 +159,7 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentStart="true"
                 android:layout_below="@+id/costPerItemText"
+                android:textColor="@android:color/black"
                 android:textSize="18sp" />
 
             <TextView
@@ -156,6 +178,7 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentStart="true"
                 android:layout_below="@+id/totalCostText"
+                android:textColor="@android:color/black"
                 android:textSize="18sp" />
 
         </RelativeLayout>
