@@ -36,6 +36,8 @@
         </activity>
         <activity android:name=".CumulativeGPAActivity">
         </activity>
+        <activity android:name=".MortageActivity">
+        </activity>
 
     </application>
 
