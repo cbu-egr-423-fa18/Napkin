@@ -114,7 +114,7 @@ public class SalesActivity extends AppCompatActivity {
             // Update the outputs with dollar signs and only 2 decimals
             costPerItem.setText(String.format("$%s", String.format("%.2f", expectedCostPerItem)));
             totalCost.setText(String.format("$%s", String.format("%.2f", expectedTotalCost)));
-        } catch (NumberFormatException E) {
+        } catch (NumberFormatException e) {
             return;
         }
     }
