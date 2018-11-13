@@ -39,7 +39,7 @@
                 android:layout_centerHorizontal="true"
                 android:background="@color/cardview_shadow_end_color"
                 android:fontFamily="casual"
-                android:text="Interest Calculator"
+                android:text="Loan Calculator"
                 android:textAlignment="center"
                 android:textAllCaps="false"
                 android:textAppearance="@style/TextAppearance.AppCompat.Caption"
@@ -131,7 +131,7 @@
                         android:textSize="18sp" />
 
                     <EditText
-                        android:id="@+id/PaymentPeriodInput"
+                        android:id="@+id/paymentPeriodInput"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:ems="10"
@@ -141,22 +141,38 @@
             </ScrollView>
 
             <TextView
-                android:id="@+id/interestTitle"
+                android:id="@+id/paymentTitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentStart="true"
                 android:layout_below="@+id/textView2"
-                android:text="Interest"
+                android:text="Monthly Payment"
                 android:textSize="18sp" />
 
-            <EditText
-                android:id="@+id/interestOutput"
+            <TextView
+                android:id="@+id/paymentOutput"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentStart="true"
-                android:layout_below="@+id/interestTitle"
-                android:ems="10"
-                android:inputType="textPersonName" />
+                android:layout_below="@+id/paymentTitle"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/totalPaymentTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/paymentOutput"
+                android:text="Total Payment"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/totalPaymentOutput"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/totalPaymentTitle"
+                android:textSize="18sp" />
 
         </RelativeLayout>
 

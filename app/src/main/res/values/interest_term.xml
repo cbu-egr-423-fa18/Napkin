@@ -2,13 +2,6 @@
 <resources>
 <string-array name="interest_term_array">
     <item>Annually</item>
-    <item>Semi Annually</item>
-    <item>Quarterly</item>
     <item>Monthly</item>
-    <item>Semi-Monthly</item>
-    <item>Biweekly</item>
-    <item>Weekly</item>
-    <item>Daily</item>
-    <item>Continuously</item>
 </string-array>
 </resources>
