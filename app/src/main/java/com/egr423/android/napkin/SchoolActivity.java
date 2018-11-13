@@ -44,21 +44,23 @@ public class SchoolActivity extends AppCompatActivity {
     }
 
     private void setSingleEvent(GridLayout mainGrid) {
-        //Loop all child item of Main Grid
-        for (int i = 0; i < mainGrid.getChildCount(); i++) {
-            //You can see , all child item is CardView , so we just cast object to CardView
-            CardView cardView = (CardView) mainGrid.getChildAt(i);
-            final int finalI = i;
-            cardView.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
+        CardView cardView = (CardView) mainGrid.getChildAt(0);
+        cardView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(SchoolActivity.this, GPAActivity.class);
+                startActivity(intent);
 
-                    Intent intent = new Intent(SchoolActivity.this,CalculatorActivity.class);
-                    startActivity(intent);
-
-                }
-            });
-        }
+            }
+        });
+        cardView = (CardView) mainGrid.getChildAt(1);
+        cardView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(SchoolActivity.this, CumulativeGPAActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 }
 

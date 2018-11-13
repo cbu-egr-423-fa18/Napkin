@@ -7,7 +7,7 @@ import android.text.TextWatcher;
 import android.widget.EditText;
 import android.widget.TextView;
 
-public class TipActivity extends AppCompatActivity {
+public class TipActivity  extends AppCompatActivity  {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -71,25 +71,30 @@ public class TipActivity extends AppCompatActivity {
      * Updates the output fields to the appropriate number whenever an input field is changed.
      */
     private void updateOutputs() {
-        // Inputs
-        EditText waysSplitInput = (EditText) findViewById(R.id.waysSplit);
-        EditText tipPercentageInput = (EditText) findViewById(R.id.tipPercentage);
-        EditText totalBillInput = (EditText) findViewById(R.id.totalBill);
+        try{
+            // Inputs
+            EditText waysSplitInput = (EditText) findViewById(R.id.waysSplit);
+            EditText tipPercentageInput = (EditText) findViewById(R.id.tipPercentage);
+            EditText totalBillInput = (EditText) findViewById(R.id.totalBill);
 
-        // Input values
-        double waysSplit = Double.parseDouble(waysSplitInput.getText().toString());
-        double tipPercentage = Double.parseDouble(tipPercentageInput.getText().toString()) / 100;
-        double totalBill = Double.parseDouble(totalBillInput.getText().toString());
+            // Input values
+            double waysSplit = Double.parseDouble(waysSplitInput.getText().toString());
+            double tipPercentage = Double.parseDouble(tipPercentageInput.getText().toString()) / 100;
+            double totalBill = Double.parseDouble(totalBillInput.getText().toString());
 
-        // Outputs
-        TextView costPerPerson = (TextView) findViewById(R.id.costPerPerson);
-        TextView totalCostOfBill = (TextView) findViewById(R.id.totalCostOfBill);
+            // Outputs
+            TextView costPerPerson = (TextView) findViewById(R.id.costPerPerson);
+            TextView totalCostOfBill = (TextView) findViewById(R.id.totalCostOfBill);
 
-        double expectedTotalCostOfBill = totalBill * (1 + tipPercentage);
-        double expectedCostPerPerson = expectedTotalCostOfBill / waysSplit;
+            double expectedTotalCostOfBill = totalBill * (1 + tipPercentage);
+            double expectedCostPerPerson = expectedTotalCostOfBill / waysSplit;
 
-        // Update the outputs with dollar signs and only 2 decimals
-        costPerPerson.setText(String.format("$%s", String.format("%.2f", expectedCostPerPerson)));
-        totalCostOfBill.setText(String.format("$%s", String.format("%.2f", expectedTotalCostOfBill)));
+            // Update the outputs with dollar signs and only 2 decimals
+            costPerPerson.setText(String.format("$%s", String.format("%.2f", expectedCostPerPerson)));
+            totalCostOfBill.setText(String.format("$%s", String.format("%.2f", expectedTotalCostOfBill)));
+        } catch (NumberFormatException E){
+            return;
+        }
+
     }
 }
