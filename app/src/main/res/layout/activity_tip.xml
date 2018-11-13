@@ -87,7 +87,7 @@
                         android:ems="10"
                         android:hint="0"
                         android:inputType="number"
-                        android:text="4" />
+                        android:text="2" />
 
                     <TextView
                         android:id="@+id/tipPercentageText"
@@ -102,9 +102,9 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:ems="10"
-                        android:hint="0.00%"
+                        android:hint="0.00"
                         android:inputType="numberDecimal"
-                        android:text="20.00" />
+                        android:text="0.00" />
 
                     <TextView
                         android:id="@+id/totalBillText"
@@ -119,26 +119,10 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:ems="10"
-                        android:hint="$0.00"
+                        android:hint="0.00"
                         android:inputType="numberDecimal"
-                        android:text="20.00" />
+                        android:text="0.00" />
 
-                    <TextView
-                        android:id="@+id/taxRateText"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Tax Rate:"
-                        android:textColor="@android:color/black"
-                        android:textSize="18sp" />
-
-                    <EditText
-                        android:id="@+id/taxRate"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:ems="10"
-                        android:hint="0.00%"
-                        android:inputType="numberDecimal"
-                        android:text="8.00" />
                 </LinearLayout>
             </ScrollView>
 

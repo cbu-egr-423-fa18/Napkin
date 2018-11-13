@@ -13,12 +13,12 @@ public class TipActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tip);
+        updateOutputs();
 
         // Inputs
         EditText waysSplit = (EditText) findViewById(R.id.waysSplit);
         EditText tipPercentage = (EditText) findViewById(R.id.tipPercentage);
         EditText totalBill = (EditText) findViewById(R.id.totalBill);
-        EditText taxRate = (EditText) findViewById(R.id.taxRate);
 
         // Each input needs to have an addTextChangedListener to dynamically change the outputs
         waysSplit.addTextChangedListener(new TextWatcher() {
@@ -65,21 +65,6 @@ public class TipActivity extends AppCompatActivity {
             public void afterTextChanged(Editable s) {
             }
         });
-
-        taxRate.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-            }
-
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-                updateOutputs();
-            }
-
-            @Override
-            public void afterTextChanged(Editable s) {
-            }
-        });
     }
 
     /**
@@ -90,19 +75,17 @@ public class TipActivity extends AppCompatActivity {
         EditText waysSplitInput = (EditText) findViewById(R.id.waysSplit);
         EditText tipPercentageInput = (EditText) findViewById(R.id.tipPercentage);
         EditText totalBillInput = (EditText) findViewById(R.id.totalBill);
-        EditText taxRateInput = (EditText) findViewById(R.id.taxRate);
 
         // Input values
         double waysSplit = Double.parseDouble(waysSplitInput.getText().toString());
         double tipPercentage = Double.parseDouble(tipPercentageInput.getText().toString()) / 100;
         double totalBill = Double.parseDouble(totalBillInput.getText().toString());
-        double taxRate = Double.parseDouble(taxRateInput.getText().toString()) / 100;
 
         // Outputs
         TextView costPerPerson = (TextView) findViewById(R.id.costPerPerson);
         TextView totalCostOfBill = (TextView) findViewById(R.id.totalCostOfBill);
 
-        double expectedTotalCostOfBill = totalBill * (1 + tipPercentage) * (1 + taxRate);
+        double expectedTotalCostOfBill = totalBill * (1 + tipPercentage);
         double expectedCostPerPerson = expectedTotalCostOfBill / waysSplit;
 
         // Update the outputs with dollar signs and only 2 decimals
