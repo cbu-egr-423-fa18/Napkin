@@ -71,7 +71,7 @@ public class TipActivity  extends AppCompatActivity  {
      * Updates the output fields to the appropriate number whenever an input field is changed.
      */
     private void updateOutputs() {
-        try{
+        try {
             // Inputs
             EditText waysSplitInput = (EditText) findViewById(R.id.waysSplit);
             EditText tipPercentageInput = (EditText) findViewById(R.id.tipPercentage);
@@ -92,7 +92,7 @@ public class TipActivity  extends AppCompatActivity  {
             // Update the outputs with dollar signs and only 2 decimals
             costPerPerson.setText(String.format("$%s", String.format("%.2f", expectedCostPerPerson)));
             totalCostOfBill.setText(String.format("$%s", String.format("%.2f", expectedTotalCostOfBill)));
-        } catch (NumberFormatException E){
+        } catch (NumberFormatException e){
             return;
         }
 
