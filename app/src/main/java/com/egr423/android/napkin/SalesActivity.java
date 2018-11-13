@@ -13,6 +13,7 @@ public class SalesActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sales);
+        updateOutputs();
 
         // Inputs
         EditText initialPrice = (EditText) findViewById(R.id.initialPrice);
@@ -104,7 +105,7 @@ public class SalesActivity extends AppCompatActivity {
         TextView totalCost = (TextView) findViewById(R.id.totalCost);
 
         // Get the input values and then calculate what the output values will be
-        double expectedCostPerItem = initialPrice * salePercentage * (1 + salesTax);
+        double expectedCostPerItem = initialPrice - (initialPrice * salePercentage) * (1 + salesTax);
         double expectedTotalCost = expectedCostPerItem * itemQuantity;
 
         // Update the outputs with dollar signs and only 2 decimals
