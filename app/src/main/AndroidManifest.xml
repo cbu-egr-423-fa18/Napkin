@@ -38,6 +38,16 @@
         </activity>
         <activity android:name=".MortageActivity">
         </activity>
+        <activity android:name=".ConversionsActivity">
+        </activity>
+        <activity android:name=".WeightActivity">
+        </activity>
+        <activity android:name=".VolumeActivity">
+        </activity>
+        <activity android:name=".LenthActivity">
+        </activity>
+        <activity android:name=".TemperatureActivity">
+        </activity>
 
     </application>
 

@@ -104,7 +104,7 @@ public class SalesActivity extends AppCompatActivity {
             double itemQuantity = Double.parseDouble(itemQuantityInput.getText().toString());
 
             // Outputs
-            TextView costPerItem = (TextView) findViewById(R.id.costPerItem);
+            TextView costPerItem = (TextView) findViewById(R.id.ConvertedAmount);
             TextView totalCost = (TextView) findViewById(R.id.totalCost);
 
             // Get the input values and then calculate what the output values will be

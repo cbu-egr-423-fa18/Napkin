@@ -32,7 +32,7 @@
                 android:text="TextView" />
 
             <TextView
-                android:id="@+id/tipCalculator"
+                android:id="@+id/volumeCalculator"
                 android:layout_width="311dp"
                 android:layout_height="128dp"
                 android:layout_alignParentTop="true"
@@ -154,7 +154,7 @@
                 android:textSize="18sp" />
 
             <TextView
-                android:id="@+id/costPerItem"
+                android:id="@+id/ConvertedAmount"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentStart="true"
@@ -167,7 +167,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentStart="true"
-                android:layout_below="@+id/costPerItem"
+                android:layout_below="@+id/ConvertedAmount"
                 android:text="Total Cost:"
                 android:textColor="@android:color/black"
                 android:textSize="18sp" />

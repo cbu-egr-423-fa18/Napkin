@@ -3,19 +3,19 @@ package com.egr423.android.napkin;
 
 import android.content.Intent;
 import android.graphics.Color;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.CardView;
 import android.view.View;
 import android.widget.GridLayout;
 import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity {
+public class ConversionsActivity extends AppCompatActivity {
     GridLayout mainGrid;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_conversions);
         mainGrid = (GridLayout) findViewById(R.id.mainGrid);
         setSingleEvent(mainGrid);
     }
@@ -31,12 +31,12 @@ public class MainActivity extends AppCompatActivity {
                     if (cardView.getCardBackgroundColor().getDefaultColor() == -1) {
                         //Change background color
                         cardView.setCardBackgroundColor(Color.parseColor("#FF6F00"));
-                        Toast.makeText(MainActivity.this, "State : True", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(ConversionsActivity.this, "State : True", Toast.LENGTH_SHORT).show();
 
                     } else {
                         //Change background color
                         cardView.setCardBackgroundColor(Color.parseColor("#FFFFFF"));
-                        Toast.makeText(MainActivity.this, "State : False", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(ConversionsActivity.this, "State : False", Toast.LENGTH_SHORT).show();
                     }
                 }
             });
@@ -49,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
             cardView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    Intent intent = new Intent(MainActivity.this, LifestyleActivity.class);
+                    Intent intent = new Intent(ConversionsActivity.this, LenthActivity.class);
                     startActivity(intent);
 
                 }
@@ -58,7 +58,7 @@ public class MainActivity extends AppCompatActivity {
             cardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, FinanceActivity.class);
+                Intent intent = new Intent(ConversionsActivity.this, TemperatureActivity.class);
                 startActivity(intent);
             }
             });
@@ -66,19 +66,18 @@ public class MainActivity extends AppCompatActivity {
             cardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, SchoolActivity.class);
+                Intent intent = new Intent(ConversionsActivity.this, VolumeActivity.class);
                 startActivity(intent);
             }
             });
-            cardView = (CardView) mainGrid.getChildAt(3);
-            cardView.setOnClickListener(new View.OnClickListener() {
+        cardView = (CardView) mainGrid.getChildAt(3);
+        cardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, ConversionsActivity.class);
+                Intent intent = new Intent(ConversionsActivity.this, WeightActivity.class);
                 startActivity(intent);
             }
-            });
-
+        });
 
     }
 
