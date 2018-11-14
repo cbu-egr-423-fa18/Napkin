@@ -74,7 +74,7 @@
                     android:orientation="vertical" >
 
                     <TextView
-                        android:id="@+id/hourlyPayTitle"
+                        android:id="@+id/mortgageAmountTitle"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_alignParentStart="true"
@@ -84,7 +84,7 @@
                         android:textSize="18sp" />
 
                     <EditText
-                        android:id="@+id/hourlyPayInput"
+                        android:id="@+id/mortgageAmountInput"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:ems="10"
@@ -94,7 +94,7 @@
                         android:textColor="@android:color/black" />
 
                     <TextView
-                        android:id="@+id/annualPayTitle"
+                        android:id="@+id/interestRateTitle"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="Interest Rate:"
@@ -102,7 +102,7 @@
                         android:textSize="18sp" />
 
                     <EditText
-                        android:id="@+id/annualPayInput"
+                        android:id="@+id/interestRateInput"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:ems="10"
@@ -112,7 +112,7 @@
                         android:textColor="@android:color/black" />
 
                     <TextView
-                        android:id="@+id/taxRateTitle"
+                        android:id="@+id/mortgagePeriodTitle"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="Mortage Period (Years):"
@@ -120,12 +120,12 @@
                         android:textSize="18sp" />
 
                     <EditText
-                        android:id="@+id/taxRateInput"
+                        android:id="@+id/mortgagePeriodInput"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:ems="10"
                         android:hint="0"
-                        android:inputType="numberDecimal"
+                        android:inputType="number"
                         android:text="0"
                         android:textColor="@android:color/black" />
 
