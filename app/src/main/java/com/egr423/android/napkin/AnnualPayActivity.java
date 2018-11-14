@@ -107,7 +107,7 @@ public class AnnualPayActivity extends AppCompatActivity {
             double workWeeksPerYear = Double.parseDouble(workWeeksPerYearInput.getText().toString());
 
             // Outputs
-            TextView hourlyPayOutput = (TextView) findViewById(R.id.hourlyPayOutputDisplay);
+            TextView hourlyPayOutput = (TextView) findViewById(R.id.totalCostOfMortgageOutput);
             TextView annualPayOutput = (TextView) findViewById(R.id.annualPayOutputDisplay);
 
             double expectedHourlyPay = annualPay / (workHoursPerWeek * workWeeksPerYear);

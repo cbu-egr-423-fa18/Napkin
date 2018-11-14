@@ -7,7 +7,6 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.CardView;
 import android.view.View;
-import android.view.WindowManager;
 import android.widget.GridLayout;
 import android.widget.Toast;
 
@@ -58,7 +57,7 @@ public class FinanceActivity extends AppCompatActivity {
         cardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(FinanceActivity.this, MortageActivity.class);
+                Intent intent = new Intent(FinanceActivity.this, MortgageActivity.class);
                 startActivity(intent);
             }
         });
