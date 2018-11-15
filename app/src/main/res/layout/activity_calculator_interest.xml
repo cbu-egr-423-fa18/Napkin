@@ -91,7 +91,6 @@
                         android:layout_height="wrap_content"
                         android:ems="10"
                         android:inputType="numberDecimal"
-                        android:textColor="@android:color/darker_gray"
                         tools:text="$0.00" />
 
                     <TextView
@@ -120,14 +119,13 @@
                         android:layout_height="wrap_content"
                         android:ems="10"
                         android:inputType="numberDecimal"
-                        android:textColor="@android:color/darker_gray"
                         tools:text="0%" />
 
                     <TextView
                         android:id="@+id/paymentPeriodTitle"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Payment Period"
+                        android:text="Payment Period In Months"
                         android:textSize="18sp" />
 
                     <EditText
