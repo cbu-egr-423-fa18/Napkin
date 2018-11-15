@@ -4,7 +4,11 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.util.Log;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -22,8 +26,9 @@ public class CumulativeGPAActivity extends AppCompatActivity {
         inputs = new ArrayList<EditText>();
         inputs.add((EditText) findViewById(R.id.currentGPAInput));
         inputs.add((EditText) findViewById(R.id.totalCreditsInput));
-        inputs.add((EditText) findViewById(R.id.classGradeInput));
         inputs.add((EditText) findViewById(R.id.classCreditsInput));
+
+        Spinner gradeSelector = findViewById(R.id.classGradeSelector);
 
         //Set listeners
         for(EditText e: inputs){
@@ -34,7 +39,6 @@ public class CumulativeGPAActivity extends AppCompatActivity {
 
                 @Override
                 public void onTextChanged(CharSequence s, int start, int before, int count) {
-
                     updateOutputs();
                 }
 
@@ -43,6 +47,18 @@ public class CumulativeGPAActivity extends AppCompatActivity {
                 }
             });
         }
+
+        gradeSelector.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                updateOutputs();
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
 
     }
 
@@ -53,21 +69,69 @@ public class CumulativeGPAActivity extends AppCompatActivity {
             //Taking user inputs
             double currentGPA = Double.parseDouble(((EditText) findViewById(R.id.currentGPAInput)).getText().toString());
             double totalCredits = Double.parseDouble(((EditText) findViewById(R.id.totalCreditsInput)).getText().toString());
-            double classGrade = Double.parseDouble(((EditText) findViewById(R.id.classGradeInput)).getText().toString());
             double classCredits = Double.parseDouble(((EditText) findViewById(R.id.classCreditsInput)).getText().toString());
+            Spinner gradeSelector = findViewById(R.id.classGradeSelector);
 
             //Calculating GPA
-            double cumulativeGPAOutput = (currentGPA * totalCredits) + (classGrade * classCredits) / (totalCredits + classCredits);
-
+            double classGradeValue = gradeValue(gradeSelector.getSelectedItem().toString());
+            double cumulativeGPAOutput = ((currentGPA * totalCredits) + (classGradeValue * classCredits)) / (totalCredits + classCredits);
+            Log.d("GPA calculation", Double.toString(currentGPA * totalCredits) + " + " + (classGradeValue * classCredits) + " / " + (totalCredits + classCredits));
+            Log.d("classGradeValue", Double.toString(classGradeValue));
+            Log.d("gpaValue", Double.toString(cumulativeGPAOutput));
             //Output
             TextView cumulativeGPA = findViewById(R.id.cumulativeGPAOutput);
 
             //output to screen
-            cumulativeGPA.setText(String.format("%.1f", cumulativeGPAOutput));
+           // cumulativeGPA.setText(String.format("%.2f", cumulativeGPAOutput));
+            cumulativeGPA.setText(String.valueOf(cumulativeGPAOutput));
 
         } catch(NumberFormatException E){
 
         }
 
+    }
+
+    double gradeValue(String gradeText){
+        Log.d("grade text", gradeText);
+        double gradeval = 0;
+        switch (gradeText){
+            case "A":
+                gradeval = 4.0;
+                break;
+            case "A-":
+                gradeval = 3.7;
+                break;
+            case "B+":
+                gradeval = 3.3;
+                break;
+            case "B":
+                gradeval = 3.0;
+                break;
+            case "B-":
+                gradeval = 2.7;
+                break;
+            case "C+":
+                gradeval = 2.3;
+                break;
+            case "C":
+                gradeval = 2.0;
+                break;
+            case "C-":
+                gradeval = 1.7;
+                break;
+            case "D+":
+                gradeval = 1.3;
+                break;
+            case "D":
+                gradeval = 1.0;
+                break;
+            case "D-":
+                gradeval = 0.7;
+                break;
+            case "F":
+                gradeval = 0.0;
+                break;
+        }
+        return gradeval;
     }
 }

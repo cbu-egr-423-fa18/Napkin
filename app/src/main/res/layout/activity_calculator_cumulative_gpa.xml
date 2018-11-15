@@ -98,7 +98,6 @@
                         android:layout_below="@+id/currentGPATitle"
                         android:ems="10"
                         android:inputType="numberDecimal"
-                        android:textColor="@android:color/darker_gray"
                         tools:text="0.0" />
 
                     <TextView
@@ -122,12 +121,11 @@
                         android:text="Class Grade"
                         android:textSize="18sp" />
 
-                    <EditText
-                        android:id="@+id/classGradeInput"
+                    <Spinner
+                        android:id="@+id/classGradeSelector"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:ems="10"
-                        android:inputType="numberDecimal" />
+                        android:entries="@array/gradeOfClassValue" />
 
                     <TextView
                         android:id="@+id/classCreditsTitle"
@@ -154,14 +152,13 @@
                 android:text="Cumulative GPA"
                 android:textSize="18sp" />
 
-            <EditText
+            <TextView
                 android:id="@+id/cumulativeGPAOutput"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentStart="true"
                 android:layout_below="@+id/cumulativeGPAtitle"
-                android:ems="10"
-                android:inputType="textPersonName" />
+                android:textSize="18sp" />
 
         </RelativeLayout>
 

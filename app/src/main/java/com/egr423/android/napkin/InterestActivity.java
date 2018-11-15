@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.EditText;
@@ -96,10 +97,11 @@ public class InterestActivity extends AppCompatActivity {
 
             //monthly compounding
             double rate = Double.parseDouble(((EditText) findViewById(R.id.interestRateInput)).getText().toString()) / 100 / 12;
+            Log.d("first rate", Double.toString(rate));
 
             if(annual) {
-                //yearly compounding - seems to have some issues displaying
-                rate = Math.pow(1 + Double.parseDouble(((EditText) findViewById(R.id.interestRateInput)).getText().toString())/ 100, 1/12 ) - 1;
+                rate = Math.pow(1 + Double.parseDouble(((EditText) findViewById(R.id.interestRateInput)).getText().toString())/ 100.0, 1.0/12.0) - 1.0;
+                Log.d("yearly rate", Double.toString(rate));
             }
 
             int periods = Integer.parseInt(((EditText) findViewById(R.id.paymentPeriodInput)).getText().toString());
