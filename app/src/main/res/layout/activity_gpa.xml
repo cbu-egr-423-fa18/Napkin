@@ -90,6 +90,7 @@
                         android:ems="10"
                         android:hint="0-4"
                         android:inputType="numberDecimal"
+                        android:text="0"
                         android:textColor="@android:color/black" />
 
                     <TextView
@@ -124,6 +125,7 @@
                         android:ems="10"
                         android:hint="0-4"
                         android:inputType="numberDecimal"
+                        android:text="0"
                         android:textColor="@android:color/black" />
 
                     <TextView
@@ -158,6 +160,7 @@
                         android:ems="10"
                         android:hint="0-4"
                         android:inputType="numberDecimal"
+                        android:text="0"
                         android:textColor="@android:color/black" />
 
                     <TextView
@@ -192,6 +195,7 @@
                         android:ems="10"
                         android:hint="0-4"
                         android:inputType="numberDecimal"
+                        android:text="0"
                         android:textColor="@android:color/black" />
 
                     <TextView
@@ -226,6 +230,7 @@
                         android:ems="10"
                         android:hint="0-4"
                         android:inputType="numberDecimal"
+                        android:text="0"
                         android:textColor="@android:color/black" />
 
                     <TextView
@@ -260,6 +265,7 @@
                         android:ems="10"
                         android:hint="0-4"
                         android:inputType="numberDecimal"
+                        android:text="0"
                         android:textColor="@android:color/black" />
 
                     <TextView
@@ -317,11 +323,11 @@
             </ScrollView>
 
             <TextView
-                android:id="@+id/gpa"
+                android:id="@+id/gpaText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/textView2"
                 android:layout_alignParentStart="true"
+                android:layout_below="@+id/textView2"
                 android:text="GPA"
                 android:textColor="@android:color/black"
                 android:textSize="18sp" />
@@ -331,8 +337,8 @@
                 android:id="@+id/gpa"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/totalCostOfMortgageTitle"
                 android:layout_alignParentStart="true"
+                android:layout_below="@+id/gpaText"
                 android:textColor="@android:color/black"
                 android:textSize="18sp" />
 
