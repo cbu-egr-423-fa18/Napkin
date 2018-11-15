@@ -90,7 +90,6 @@
                         android:ems="10"
                         android:hint="0.00"
                         android:inputType="numberDecimal"
-                        android:text="0.00"
                         android:textColor="@android:color/black" />
 
                     <TextView
@@ -108,7 +107,6 @@
                         android:ems="10"
                         android:hint="0.00"
                         android:inputType="numberDecimal"
-                        android:text="0.00"
                         android:textColor="@android:color/black" />
 
                     <TextView
@@ -126,7 +124,6 @@
                         android:ems="10"
                         android:hint="0"
                         android:inputType="number"
-                        android:text="0"
                         android:textColor="@android:color/black" />
 
                 </LinearLayout>
