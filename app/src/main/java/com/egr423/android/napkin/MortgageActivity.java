@@ -8,23 +8,23 @@ import android.view.WindowManager;
 import android.widget.EditText;
 import android.widget.TextView;
 
-public class TipActivity  extends AppCompatActivity  {
+public class MortgageActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         getWindow().setSoftInputMode(
                 WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_tip);
+        setContentView(R.layout.activity_mortgage);
         updateOutputs();
 
         // Inputs
-        EditText waysSplit = (EditText) findViewById(R.id.waysSplit);
-        EditText tipPercentage = (EditText) findViewById(R.id.tipPercentage);
-        EditText totalBill = (EditText) findViewById(R.id.totalBill);
+        EditText mortgageAmount = (EditText) findViewById(R.id.mortgageAmountInput);
+        EditText interestRate = (EditText) findViewById(R.id.interestRateInput);
+        EditText mortgagePeriod = (EditText) findViewById(R.id.mortgagePeriodInput);
 
         // Each input needs to have an addTextChangedListener to dynamically change the outputs
-        waysSplit.addTextChangedListener(new TextWatcher() {
+        mortgageAmount.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
             }
@@ -39,7 +39,7 @@ public class TipActivity  extends AppCompatActivity  {
             }
         });
 
-        tipPercentage.addTextChangedListener(new TextWatcher() {
+        interestRate.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
             }
@@ -54,7 +54,7 @@ public class TipActivity  extends AppCompatActivity  {
             }
         });
 
-        totalBill.addTextChangedListener(new TextWatcher() {
+        mortgagePeriod.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
             }
@@ -76,28 +76,36 @@ public class TipActivity  extends AppCompatActivity  {
     private void updateOutputs() {
         try {
             // Inputs
-            EditText waysSplitInput = (EditText) findViewById(R.id.waysSplit);
-            EditText tipPercentageInput = (EditText) findViewById(R.id.tipPercentage);
-            EditText totalBillInput = (EditText) findViewById(R.id.totalBill);
+            EditText mortgageAmountInput = (EditText) findViewById(R.id.mortgageAmountInput);
+            EditText interestRateInput = (EditText) findViewById(R.id.interestRateInput);
+            EditText mortgagePeriodInput = (EditText) findViewById(R.id.mortgagePeriodInput);
 
             // Input values
-            double waysSplit = Double.parseDouble(waysSplitInput.getText().toString());
-            double tipPercentage = Double.parseDouble(tipPercentageInput.getText().toString()) / 100;
-            double totalBill = Double.parseDouble(totalBillInput.getText().toString());
+            double mortgageAmount = Double.parseDouble(mortgageAmountInput.getText().toString());
+            double interestRate = Double.parseDouble(interestRateInput.getText().toString()) / 100;
+            double mortgagePeriod = Double.parseDouble(mortgagePeriodInput.getText().toString());
 
             // Outputs
-            TextView costPerPerson = (TextView) findViewById(R.id.costPerPerson);
-            TextView totalCostOfBill = (TextView) findViewById(R.id.totalCostOfBill);
+            TextView totalCostOfMortgage = (TextView) findViewById(R.id.totalCostOfMortgageOutput);
+            TextView monthlyPayment = (TextView) findViewById(R.id.monthlyPaymentOutput);
 
-            double expectedTotalCostOfBill = totalBill * (1 + tipPercentage);
-            double expectedCostPerPerson = expectedTotalCostOfBill / waysSplit;
+            // Convert the interestRate to a monthly rate
+            interestRate /= 12.0;
+
+            // Convert the mortgagePeriod to months
+            mortgagePeriod *= 12.0;
+
+            double expectedMonthlyPayment = mortgageAmount *
+                    (interestRate * Math.pow((1 + interestRate), mortgagePeriod)) /
+                    ((Math.pow((1 + interestRate), mortgagePeriod)) - 1);
+            double expectedCostOfMortgage = ((interestRate * mortgageAmount) /
+                    (1 - (Math.pow(1 + interestRate, -mortgagePeriod)))) * mortgagePeriod;
 
             // Update the outputs with dollar signs and only 2 decimals
-            costPerPerson.setText(String.format("$%s", String.format("%.2f", expectedCostPerPerson)));
-            totalCostOfBill.setText(String.format("$%s", String.format("%.2f", expectedTotalCostOfBill)));
-        } catch (NumberFormatException e){
+            totalCostOfMortgage.setText(String.format("$%s", String.format("%.2f", expectedCostOfMortgage)));
+            monthlyPayment.setText(String.format("$%s", String.format("%.2f", expectedMonthlyPayment)));
+        } catch (NumberFormatException e) {
             return;
         }
-
     }
 }

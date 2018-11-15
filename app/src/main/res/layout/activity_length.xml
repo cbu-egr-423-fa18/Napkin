@@ -15,7 +15,6 @@
         android:weightSum="10">
 
         <RelativeLayout
-            android:id="@+id/workHoursPerWeek"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="4">
@@ -33,16 +32,15 @@
                 android:text="TextView" />
 
             <TextView
-                android:id="@+id/textGrid"
+                android:id="@+id/volumeCalculator"
                 android:layout_width="311dp"
-                android:layout_height="wrap_content"
-                android:layout_alignParentStart="true"
+                android:layout_height="128dp"
                 android:layout_alignParentTop="true"
-                android:layout_marginStart="43dp"
-                android:layout_marginTop="10dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="11dp"
                 android:background="@color/cardview_shadow_end_color"
                 android:fontFamily="casual"
-                android:text="Annual Pay"
+                android:text="Length"
                 android:textAlignment="center"
                 android:textAllCaps="false"
                 android:textAppearance="@style/TextAppearance.AppCompat.Caption"
@@ -66,8 +64,8 @@
                 android:layout_height="328dp"
                 android:layout_above="@+id/textView2"
                 android:layout_alignParentStart="true"
-                android:layout_marginBottom="-407dp"
-                android:layout_marginStart="0dp">
+                android:layout_marginStart="0dp"
+                android:layout_marginBottom="-407dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -75,114 +73,68 @@
                     android:orientation="vertical">
 
                     <TextView
-                        android:id="@+id/hourlyPayTitle"
+                        android:id="@+id/UnitAmountText"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_alignParentStart="true"
-                        android:layout_below="@+id/textView"
-                        android:text="Hourly Pay:"
+                        android:text="Unit Amount"
                         android:textColor="@android:color/black"
                         android:textSize="18sp" />
 
                     <EditText
-                        android:id="@+id/hourlyPayInput"
+                        android:id="@+id/initialPrice"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:ems="10"
-                        android:hint="e.g. 0.00 (put 0 if unknown)"
+                        android:hint="0.00"
                         android:inputType="numberDecimal"
-                        android:textColor="@android:color/black" />
+                        android:text="0.00" />
 
                     <TextView
-                        android:id="@+id/annualPayTitle"
+                        android:id="@+id/ConvertFromText"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Annual Pay:"
+                        android:text="Convert from"
                         android:textColor="@android:color/black"
                         android:textSize="18sp" />
 
-                    <EditText
-                        android:id="@+id/annualPayInput"
+                    <Spinner
+                        android:id="@+id/ConvertFromSelector"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:ems="10"
-                        android:hint="e.g. 0.00 (put 0 if unknown)"
-                        android:inputType="numberDecimal"
-                        android:textColor="@android:color/black" />
+                        android:entries="@array/lengthConversions" />
 
                     <TextView
-                        android:id="@+id/workHoursPerWeekTitle"
+                        android:id="@+id/ConvertToText"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Work Hours Per Week:"
+                        android:text="Convet to"
                         android:textColor="@android:color/black"
                         android:textSize="18sp" />
-
-                    <EditText
-                        android:id="@+id/workHoursPerWeek"
+                    <Spinner
+                        android:id="@+id/ConvertToSelector"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:ems="10"
-                        android:hint="e.g. 40"
-                        android:inputType="number"
-                        android:textColor="@android:color/black" />
-
-                    <TextView
-                        android:id="@+id/workWeeksPerYearTitle"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Work Weeks Per Year:"
-                        android:textColor="@android:color/black"
-                        android:textSize="18sp" />
-
-                    <EditText
-                        android:id="@+id/workWeeksPerYear"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:ems="10"
-                        android:hint="1-52"
-                        android:inputType="number"
-                        android:textColor="@android:color/black" />
+                        android:entries="@array/lengthConversions" />
 
                 </LinearLayout>
             </ScrollView>
 
             <TextView
-                android:id="@+id/totalCostOfMortgageTitle"
+                android:id="@+id/ConvertedAmountText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignParentStart="true"
                 android:layout_below="@+id/textView2"
-                android:text="Hourly Pay:"
-                android:textColor="@android:color/black"
-                android:textSize="18sp" />
-
-
-            <TextView
-                android:id="@+id/totalCostOfMortgageOutput"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
                 android:layout_alignParentStart="true"
-                android:layout_below="@+id/totalCostOfMortgageTitle"
+                android:text="Converted amount"
                 android:textColor="@android:color/black"
                 android:textSize="18sp" />
 
             <TextView
-                android:id="@+id/monthlyPaymentTitle"
+                android:id="@+id/ConvertedAmount"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_below="@+id/costPerItemText"
                 android:layout_alignParentStart="true"
-                android:layout_below="@+id/totalCostOfMortgageOutput"
-                android:text="Annual Pay:"
-                android:textColor="@android:color/black"
-                android:textSize="18sp" />
-
-            <TextView
-                android:id="@+id/annualPayOutputDisplay"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentStart="true"
-                android:layout_below="@+id/monthlyPaymentTitle"
                 android:textColor="@android:color/black"
                 android:textSize="18sp" />
 

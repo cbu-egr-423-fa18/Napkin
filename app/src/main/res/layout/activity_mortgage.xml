@@ -15,7 +15,6 @@
         android:weightSum="10">
 
         <RelativeLayout
-            android:id="@+id/workHoursPerWeek"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="4">
@@ -42,7 +41,7 @@
                 android:layout_marginTop="10dp"
                 android:background="@color/cardview_shadow_end_color"
                 android:fontFamily="casual"
-                android:text="Annual Pay"
+                android:text="Mortage"
                 android:textAlignment="center"
                 android:textAllCaps="false"
                 android:textAppearance="@style/TextAppearance.AppCompat.Caption"
@@ -66,82 +65,68 @@
                 android:layout_height="328dp"
                 android:layout_above="@+id/textView2"
                 android:layout_alignParentStart="true"
-                android:layout_marginBottom="-407dp"
-                android:layout_marginStart="0dp">
+                android:layout_marginStart="0dp"
+                android:layout_marginBottom="-407dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical">
+                    android:orientation="vertical" >
 
                     <TextView
-                        android:id="@+id/hourlyPayTitle"
+                        android:id="@+id/mortgageAmountTitle"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_alignParentStart="true"
                         android:layout_below="@+id/textView"
-                        android:text="Hourly Pay:"
+                        android:text="Mortage Amount:"
                         android:textColor="@android:color/black"
                         android:textSize="18sp" />
 
                     <EditText
-                        android:id="@+id/hourlyPayInput"
+                        android:id="@+id/mortgageAmountInput"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:ems="10"
-                        android:hint="e.g. 0.00 (put 0 if unknown)"
+                        android:hint="0.00"
                         android:inputType="numberDecimal"
+                        android:text="0.00"
                         android:textColor="@android:color/black" />
 
                     <TextView
-                        android:id="@+id/annualPayTitle"
+                        android:id="@+id/interestRateTitle"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Annual Pay:"
+                        android:text="Interest Rate:"
                         android:textColor="@android:color/black"
                         android:textSize="18sp" />
 
                     <EditText
-                        android:id="@+id/annualPayInput"
+                        android:id="@+id/interestRateInput"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:ems="10"
-                        android:hint="e.g. 0.00 (put 0 if unknown)"
+                        android:hint="0.00"
                         android:inputType="numberDecimal"
+                        android:text="0.00"
                         android:textColor="@android:color/black" />
 
                     <TextView
-                        android:id="@+id/workHoursPerWeekTitle"
+                        android:id="@+id/mortgagePeriodTitle"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Work Hours Per Week:"
+                        android:text="Mortage Period (Years):"
                         android:textColor="@android:color/black"
                         android:textSize="18sp" />
 
                     <EditText
-                        android:id="@+id/workHoursPerWeek"
+                        android:id="@+id/mortgagePeriodInput"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:ems="10"
-                        android:hint="e.g. 40"
+                        android:hint="0"
                         android:inputType="number"
-                        android:textColor="@android:color/black" />
-
-                    <TextView
-                        android:id="@+id/workWeeksPerYearTitle"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Work Weeks Per Year:"
-                        android:textColor="@android:color/black"
-                        android:textSize="18sp" />
-
-                    <EditText
-                        android:id="@+id/workWeeksPerYear"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:ems="10"
-                        android:hint="1-52"
-                        android:inputType="number"
+                        android:text="0"
                         android:textColor="@android:color/black" />
 
                 </LinearLayout>
@@ -153,10 +138,9 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentStart="true"
                 android:layout_below="@+id/textView2"
-                android:text="Hourly Pay:"
+                android:text="Total Cost of Mortage:"
                 android:textColor="@android:color/black"
                 android:textSize="18sp" />
-
 
             <TextView
                 android:id="@+id/totalCostOfMortgageOutput"
@@ -164,6 +148,8 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentStart="true"
                 android:layout_below="@+id/totalCostOfMortgageTitle"
+                android:ems="10"
+                android:inputType="textPersonName"
                 android:textColor="@android:color/black"
                 android:textSize="18sp" />
 
@@ -173,16 +159,18 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentStart="true"
                 android:layout_below="@+id/totalCostOfMortgageOutput"
-                android:text="Annual Pay:"
+                android:text="Monthly Payment:"
                 android:textColor="@android:color/black"
                 android:textSize="18sp" />
 
             <TextView
-                android:id="@+id/annualPayOutputDisplay"
+                android:id="@+id/monthlyPaymentOutput"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentStart="true"
                 android:layout_below="@+id/monthlyPaymentTitle"
+                android:ems="10"
+                android:inputType="textPersonName"
                 android:textColor="@android:color/black"
                 android:textSize="18sp" />
 

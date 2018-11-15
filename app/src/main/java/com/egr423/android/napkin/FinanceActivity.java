@@ -57,7 +57,7 @@ public class FinanceActivity extends AppCompatActivity {
         cardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(FinanceActivity.this, MortageActivity.class);
+                Intent intent = new Intent(FinanceActivity.this, MortgageActivity.class);
                 startActivity(intent);
             }
         });

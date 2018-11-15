@@ -32,7 +32,7 @@
                 android:text="TextView" />
 
             <TextView
-                android:id="@+id/tipCalculator"
+                android:id="@+id/volumeCalculator"
                 android:layout_width="311dp"
                 android:layout_height="128dp"
                 android:layout_alignParentStart="true"
@@ -61,12 +61,13 @@
                 android:text="TextView" />
 
             <ScrollView
+                android:id="@+id/gpaLayout"
                 android:layout_width="match_parent"
                 android:layout_height="328dp"
                 android:layout_above="@+id/textView2"
                 android:layout_alignParentStart="true"
                 android:layout_marginStart="0dp"
-                android:layout_marginBottom="-407dp">
+                android:layout_marginBottom="3dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -75,67 +76,131 @@
             </ScrollView>
 
             <TextView
-                android:id="@+id/numberOfClassesText"
+                android:id="@+id/numberOfCredits1Text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_below="@+id/volumeCalculator"
                 android:layout_alignParentStart="true"
-                android:layout_below="@+id/textView"
-                android:text="Number of Classes:"
-                android:textColor="@android:color/black"
-                android:textSize="18sp" />
-
-            <Spinner
-                android:id="@+id/numberOfClasses"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_alignParentStart="true"
-                android:layout_below="@+id/numberOfClassesText"
-                android:entries="@array/numberOfClassesValue" />
-
-            <TextView
-                android:id="@+id/numberOfCreditsText"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentStart="true"
-                android:layout_below="@+id/tipCalculator"
-                android:text="Number of Credits:"
+                android:layout_marginStart="1dp"
+                android:layout_marginTop="-63dp"
+                android:text="Class 1 Credits"
                 android:textColor="@android:color/black"
                 android:textSize="18sp" />
 
             <EditText
-                android:id="@+id/numberOfCredits"
+                android:id="@+id/numberOfCredits1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_below="@+id/numberOfCredits1Text"
                 android:layout_alignParentStart="true"
-                android:layout_below="@+id/numberOfCreditsText"
                 android:ems="10"
                 android:hint="3"
                 android:inputType="number" />
 
             <TextView
-                android:id="@+id/gradeOfClassText"
+                android:id="@+id/gradeOfClass1Text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_below="@+id/numberOfCredits1"
                 android:layout_alignParentStart="true"
-                android:layout_below="@+id/numberOfCredits"
-                android:text="Grade of Class:"
+                android:text="Grade of Class: 1"
                 android:textColor="@android:color/black"
                 android:textSize="18sp" />
 
             <Spinner
-                android:id="@+id/gradeOfClass"
+                android:id="@+id/gradeOfClass1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_below="@+id/gradeOfClass1Text"
                 android:layout_alignParentStart="true"
-                android:layout_below="@+id/gradeOfClassText"
+                android:entries="@array/gradeOfClassValue" />
+
+            <TextView
+                android:id="@+id/numberOfCredits2Text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/volumeCalculator"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="0dp"
+                android:layout_marginTop="59dp"
+                android:text="Class 1 Credits"
+                android:textColor="@android:color/black"
+                android:textSize="18sp" />
+
+            <EditText
+                android:id="@+id/numberOfCredits2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/numberOfCredits2Text"
+                android:layout_alignParentStart="true"
+                android:ems="10"
+                android:hint="3"
+                android:inputType="number" />
+
+            <TextView
+                android:id="@+id/gradeOfClass2Text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/numberOfCredits2"
+                android:layout_alignParentStart="true"
+                android:text="Grade of Class: 1"
+                android:textColor="@android:color/black"
+                android:textSize="18sp" />
+
+            <Spinner
+                android:id="@+id/gradeOfClass2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/gradeOfClass2Text"
+                android:layout_alignParentStart="true"
+                android:entries="@array/gradeOfClassValue" />
+
+            <TextView
+                android:id="@+id/numberOfCredits3Text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/volumeCalculator"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="0dp"
+                android:layout_marginTop="181dp"
+                android:text="Class 1 Credits"
+                android:textColor="@android:color/black"
+                android:textSize="18sp" />
+
+            <EditText
+                android:id="@+id/numberOfCredits3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/numberOfCredits3Text"
+                android:layout_alignParentStart="true"
+                android:ems="10"
+                android:hint="3"
+                android:inputType="number" />
+
+            <TextView
+                android:id="@+id/gradeOfClass3Text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/numberOfCredits3"
+                android:layout_alignParentStart="true"
+                android:text="Grade of Class: 1"
+                android:textColor="@android:color/black"
+                android:textSize="18sp" />
+
+            <Spinner
+                android:id="@+id/gradeOfClass3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/gradeOfClass3Text"
+                android:layout_alignParentStart="true"
                 android:entries="@array/gradeOfClassValue" />
 
             <TextView
                 android:id="@+id/gpaText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignParentStart="true"
                 android:layout_below="@+id/textView2"
+                android:layout_alignParentStart="true"
                 android:text="GPA:"
                 android:textColor="@android:color/black"
                 android:textSize="18sp" />
@@ -144,8 +209,8 @@
                 android:id="@+id/gpa"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignParentStart="true"
                 android:layout_below="@+id/gpaText"
+                android:layout_alignParentStart="true"
                 android:textSize="18sp" />
 
         </RelativeLayout>

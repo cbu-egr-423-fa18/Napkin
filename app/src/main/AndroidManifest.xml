@@ -32,6 +32,22 @@
         </activity>
         <activity android:name=".InterestActivity">
         </activity>
+        <activity android:name=".GPAActivity">
+        </activity>
+        <activity android:name=".CumulativeGPAActivity">
+        </activity>
+        <activity android:name=".MortgageActivity">
+        </activity>
+        <activity android:name=".ConversionsActivity">
+        </activity>
+        <activity android:name=".WeightActivity">
+        </activity>
+        <activity android:name=".VolumeActivity">
+        </activity>
+        <activity android:name=".LenthActivity">
+        </activity>
+        <activity android:name=".TemperatureActivity">
+        </activity>
 
     </application>
 
