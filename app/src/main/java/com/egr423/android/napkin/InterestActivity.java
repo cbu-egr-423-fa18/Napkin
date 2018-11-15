@@ -16,11 +16,14 @@ public class InterestActivity extends AppCompatActivity {
 
     private ArrayList<EditText> inputs;
     private double term;
+    private boolean annual;
+    //private double rateFactor = 1/12;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_calculator_interest);
+        annual = true;
 
         //User Input Fields
             inputs = new ArrayList<EditText>();
@@ -53,12 +56,17 @@ public class InterestActivity extends AppCompatActivity {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
 
+                //honestly not sure if it's uglier to set a flag or calculate the rate in the switch both look pretty bad to me
                 switch(position){
                     //annually
                     case 0:
+                        annual = true;
+                        //rateFactor = 1/12;
                         break;
                     //monthly
                     case 1:
+                        annual = false;
+                        //rateFactor = 12;
                         break;
                     default:
                         break;
@@ -83,12 +91,23 @@ public class InterestActivity extends AppCompatActivity {
             //calculation of monthly payment
             //take input values
             double principal = Double.parseDouble(((EditText) findViewById(R.id.principalInput)).getText().toString());
+
+
+
+            //monthly compounding
             double rate = Double.parseDouble(((EditText) findViewById(R.id.interestRateInput)).getText().toString()) / 100 / 12;
+
+            if(annual) {
+                //yearly compounding - seems to have some issues displaying
+                rate = Math.pow(1 + Double.parseDouble(((EditText) findViewById(R.id.interestRateInput)).getText().toString())/ 100, 1/12 ) - 1;
+            }
+
             int periods = Integer.parseInt(((EditText) findViewById(R.id.paymentPeriodInput)).getText().toString());
 
             double numerator = Math.pow(1 + rate, periods);
             double denominator = Math.pow(1 + rate, periods) - 1;
-            monthlyPayment = principal * rate * (Math.pow(1 + rate, periods)/(Math.pow(1+rate,periods)-1));
+            //monthlyPayment = principal * rate * (Math.pow(1 + rate, periods)/(Math.pow(1+rate,periods)-1));
+            monthlyPayment = principal * rate/((1 - Math.pow(1+rate, -periods)));
 
             //outputs
             TextView monthlyPaymentOutput = findViewById(R.id.paymentOutput);
