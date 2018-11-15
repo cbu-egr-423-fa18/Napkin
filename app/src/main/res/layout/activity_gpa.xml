@@ -300,6 +300,7 @@
                         android:ems="10"
                         android:hint="0-4"
                         android:inputType="numberDecimal"
+                        android:text="0"
                         android:textColor="@android:color/black" />
 
                     <TextView
