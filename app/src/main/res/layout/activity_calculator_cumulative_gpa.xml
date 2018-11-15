@@ -102,6 +102,20 @@
                         tools:text="0.0" />
 
                     <TextView
+                        android:id="@+id/totalCreditsTitle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Total Credits"
+                        android:textSize="18sp" />
+
+                    <EditText
+                        android:id="@+id/totalCreditsInput"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:inputType="numberSigned" />
+
+                    <TextView
                         android:id="@+id/classGradeTitle"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
