@@ -16,7 +16,6 @@ public class MortgageActivity extends AppCompatActivity {
                 WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mortgage);
-        updateOutputs();
 
         // Inputs
         EditText mortgageAmount = (EditText) findViewById(R.id.mortgageAmountInput);
