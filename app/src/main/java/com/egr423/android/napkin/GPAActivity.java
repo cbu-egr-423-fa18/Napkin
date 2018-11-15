@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.util.TypedValue;
 import android.view.MotionEvent;
 import android.view.View;
@@ -92,8 +93,9 @@ public class GPAActivity extends AppCompatActivity {
     }
 
     private void updateOutputs() {
-            double totalGrade = 0;
-            double totalCredits = 0;
+        double totalGrade = 0;
+        double totalCredits = 0;
+        double gpa = 0;
         try{
             //Inputs
             EditText class1Credits = (EditText) findViewById(R.id.Class1Credits);
@@ -128,15 +130,14 @@ public class GPAActivity extends AppCompatActivity {
                     gradeValue(class6Grade.getSelectedItem().toString()),
                     gradeValue(class7Grade.getSelectedItem().toString())};
             for(int i = 0; i < 7; i++){
-                totalGrade += gradeList[i];
-            }
-            for(int i = 0; i < 7; i++){
                 totalCredits += creditList[i];
             }
+            for(int i = 0; i < 7; i++){
+                gpa += creditList[i] * gradeList[i];
+            }
+            gpa = gpa/totalCredits;
             TextView gpaView = (TextView) findViewById(R.id.gpa);
-
-
-            double gpa = (totalGrade * totalCredits)/totalCredits;
+            
             gpaView.setText(String.valueOf(gpa));
         }catch(NumberFormatException E){
         }
@@ -148,28 +149,40 @@ public class GPAActivity extends AppCompatActivity {
         switch (gradeText){
             case "A":
                 gradeval = 4.0;
+                break;
             case "A-":
                 gradeval = 3.7;
+                break;
             case "B+":
                 gradeval = 3.3;
+                break;
             case "B":
                 gradeval = 3.0;
+                break;
             case "B-":
                 gradeval = 2.7;
+                break;
             case "C+":
                 gradeval = 2.3;
+                break;
             case "C":
                 gradeval = 2.0;
+                break;
             case "C-":
                 gradeval = 1.7;
+                break;
             case "D+":
                 gradeval = 1.3;
+                break;
             case "D":
                 gradeval = 1.0;
+                break;
             case "D-":
                 gradeval = 0.7;
+                break;
             case "F":
                 gradeval = 0.0;
+                break;
         }
         return gradeval;
     }
