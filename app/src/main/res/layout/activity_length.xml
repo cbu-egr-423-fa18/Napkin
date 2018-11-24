@@ -65,7 +65,8 @@
                 android:layout_above="@+id/textView2"
                 android:layout_alignParentStart="true"
                 android:layout_marginStart="0dp"
-                android:layout_marginBottom="-407dp">
+                android:layout_marginBottom="-407dp"
+                android:id="@+id/scrollView2">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -81,9 +82,11 @@
                         android:textSize="18sp" />
 
                     <EditText
-                        android:id="@+id/initialPrice"
+                        android:id="@+id/inputAmount"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignTop="@+id/scrollView2"
                         android:ems="10"
                         android:hint="0.00"
                         android:inputType="numberDecimal"
@@ -133,8 +136,8 @@
                 android:id="@+id/ConvertedAmount"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/costPerItemText"
                 android:layout_alignParentStart="true"
+                android:layout_below="@+id/ConvertedAmountText"
                 android:textColor="@android:color/black"
                 android:textSize="18sp" />
 

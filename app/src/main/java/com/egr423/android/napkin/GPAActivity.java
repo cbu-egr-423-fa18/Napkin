@@ -137,7 +137,7 @@ public class GPAActivity extends AppCompatActivity {
             }
             gpa = gpa/totalCredits;
             TextView gpaView = (TextView) findViewById(R.id.gpa);
-            
+
             gpaView.setText(String.valueOf(gpa));
         }catch(NumberFormatException E){
         }
