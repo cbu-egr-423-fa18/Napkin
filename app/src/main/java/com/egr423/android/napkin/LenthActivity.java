@@ -87,8 +87,8 @@ public class LenthActivity extends AppCompatActivity {
     }
     private void updateOutputs() {
         try {
-            EditText inputAmount = (EditText) findViewById(R.id.initialVolume);
-            TextView outputAmount = (TextView) findViewById(R.id.ConvertedAmount);
+            EditText inputAmount = (EditText) findViewById(R.id.inputAmount);
+            TextView outputAmount = (TextView) findViewById(R.id.ConvertedLength);
             Spinner inputType = (Spinner) findViewById(R.id.ConvertFromSelector);
             Spinner outputType = (Spinner) findViewById(R.id.ConvertToSelector);
             String amountString = inputAmount.getText().toString();
