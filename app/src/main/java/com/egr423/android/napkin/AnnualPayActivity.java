@@ -1,6 +1,9 @@
 package com.egr423.android.napkin;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.text.Editable;
 import android.text.InputFilter;
@@ -10,14 +13,15 @@ import android.widget.TextView;
 import android.view.WindowManager;
 
 public class AnnualPayActivity extends AppCompatActivity {
+    SharedPreferences prefs;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        prefs = getSharedPreferences("com.egr423.android.napkin", MODE_PRIVATE);
         getWindow().setSoftInputMode(
                 WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_calculator_annual_pay);
-        updateOutputs();
 
         // Inputs
         EditText hourlyPay = (EditText) findViewById(R.id.hourlyPayInput);
@@ -25,6 +29,11 @@ public class AnnualPayActivity extends AppCompatActivity {
         EditText workHoursPerWeek = (EditText) findViewById(R.id.workHoursPerWeek);
         EditText workWeeksPerYear = (EditText) findViewById(R.id.workWeeksPerYear);
 
+        hourlyPay.setText(prefs.getString("hourlyPay", "0"), TextView.BufferType.EDITABLE);
+        annualPay.setText(prefs.getString("annualPay", "0"), TextView.BufferType.EDITABLE);
+        workHoursPerWeek.setText(prefs.getString("workHoursPerWeek", "0"), TextView.BufferType.EDITABLE);
+        workWeeksPerYear.setText(prefs.getString("workWeeksPerYear", "0"), TextView.BufferType.EDITABLE);
+        updateOutputs();
         workWeeksPerYear.setFilters(new InputFilter[]{ new InputFilterMinMax("1", "52")});
 
         // Each input needs to have an addTextChangedListener to dynamically change the outputs
@@ -99,6 +108,11 @@ public class AnnualPayActivity extends AppCompatActivity {
             EditText annualPayInput = (EditText) findViewById(R.id.annualPayInput);
             EditText workHoursPerWeekInput = (EditText) findViewById(R.id.workHoursPerWeek);
             EditText workWeeksPerYearInput = (EditText) findViewById(R.id.workWeeksPerYear);
+
+            prefs.edit().putString("hourlyPay",hourlyPayInput.getText().toString()).apply();
+            prefs.edit().putString("annualPay",annualPayInput.getText().toString()).apply();
+            prefs.edit().putString("workHoursPerWeek",workHoursPerWeekInput.getText().toString()).apply();
+            prefs.edit().putString("workWeeksPerYear",workWeeksPerYearInput.getText().toString()).apply();
 
             // Input values
             double hourlyPay = Double.parseDouble(hourlyPayInput.getText().toString());
