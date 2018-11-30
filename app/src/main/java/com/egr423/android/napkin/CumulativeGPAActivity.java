@@ -1,5 +1,6 @@
 package com.egr423.android.napkin;
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.text.Editable;
@@ -14,21 +15,26 @@ import android.widget.TextView;
 import java.util.ArrayList;
 
 public class CumulativeGPAActivity extends AppCompatActivity {
-
+    SharedPreferences prefs;
     private ArrayList<EditText> inputs;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_calculator_cumulative_gpa);
+        prefs = getSharedPreferences("com.egr423.android.napkin", MODE_PRIVATE);
 
         //User Input Fields
         inputs = new ArrayList<EditText>();
         inputs.add((EditText) findViewById(R.id.currentGPAInput));
         inputs.add((EditText) findViewById(R.id.totalCreditsInput));
         inputs.add((EditText) findViewById(R.id.classCreditsInput));
-
         Spinner gradeSelector = findViewById(R.id.classGradeSelector);
+        inputs.get(0).setText(prefs.getString("currentGPAC", "0"));
+        inputs.get(1).setText(prefs.getString("totalCreditsC", "0"));
+        inputs.get(2).setText(prefs.getString("classCreditsC", "0"));
+        gradeSelector.setSelection(prefs.getInt("gradeSelectorC", 0), false);
+        updateOutputs();
 
         //Set listeners
         for(EditText e: inputs){
@@ -71,6 +77,11 @@ public class CumulativeGPAActivity extends AppCompatActivity {
             double totalCredits = Double.parseDouble(((EditText) findViewById(R.id.totalCreditsInput)).getText().toString());
             double classCredits = Double.parseDouble(((EditText) findViewById(R.id.classCreditsInput)).getText().toString());
             Spinner gradeSelector = findViewById(R.id.classGradeSelector);
+
+            prefs.edit().putString("currentGPAC",((EditText) findViewById(R.id.currentGPAInput)).getText().toString()).apply();
+            prefs.edit().putString("totalCreditsC",((EditText) findViewById(R.id.totalCreditsInput)).getText().toString()).apply();
+            prefs.edit().putString("classCreditsC",((EditText) findViewById(R.id.classCreditsInput)).getText().toString()).apply();
+            prefs.edit().putInt("gradeSelectorC", gradeSelector.getSelectedItemPosition()).apply();
 
             //Calculating GPA
             double classGradeValue = gradeValue(gradeSelector.getSelectedItem().toString());

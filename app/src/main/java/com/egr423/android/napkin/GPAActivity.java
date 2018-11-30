@@ -1,5 +1,6 @@
 package com.egr423.android.napkin;
 
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -21,10 +22,12 @@ import java.util.Arrays;
 import java.util.List;
 
 public class GPAActivity extends AppCompatActivity {
+    SharedPreferences prefs;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        prefs = getSharedPreferences("com.egr423.android.napkin", MODE_PRIVATE);
         getWindow().setSoftInputMode(
                 WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
         super.onCreate(savedInstanceState);
@@ -39,6 +42,14 @@ public class GPAActivity extends AppCompatActivity {
         EditText class6Credits = (EditText) findViewById(R.id.Class6Credits);
         EditText class7Credits = (EditText) findViewById(R.id.Class7Credits);
 
+        class1Credits.setText(prefs.getString("class1Credits", "0"), TextView.BufferType.EDITABLE);
+        class2Credits.setText(prefs.getString("class2Credits", "0"), TextView.BufferType.EDITABLE);
+        class3Credits.setText(prefs.getString("class3Credits", "0"), TextView.BufferType.EDITABLE);
+        class4Credits.setText(prefs.getString("class4Credits", "0"), TextView.BufferType.EDITABLE);
+        class5Credits.setText(prefs.getString("class5Credits", "0"), TextView.BufferType.EDITABLE);
+        class6Credits.setText(prefs.getString("class6Credits", "0"), TextView.BufferType.EDITABLE);
+        class7Credits.setText(prefs.getString("class7Credits", "0"), TextView.BufferType.EDITABLE);
+
         Spinner class1Grade = (Spinner) findViewById(R.id.Class1Grade);
         Spinner class2Grade = (Spinner) findViewById(R.id.Class2Grade);
         Spinner class3Grade = (Spinner) findViewById(R.id.Class3Grade);
@@ -46,6 +57,17 @@ public class GPAActivity extends AppCompatActivity {
         Spinner class5Grade = (Spinner) findViewById(R.id.Class5Grade);
         Spinner class6Grade = (Spinner) findViewById(R.id.Class6Grade);
         Spinner class7Grade = (Spinner) findViewById(R.id.Class7Grade);
+
+        class1Grade.setSelection(prefs.getInt("class1Grade", 0), false);
+        class2Grade.setSelection(prefs.getInt("class2Grade", 0), false);
+        class3Grade.setSelection(prefs.getInt("class3Grade", 0), false);
+        class4Grade.setSelection(prefs.getInt("class4Grade", 0), false);
+        class5Grade.setSelection(prefs.getInt("class5Grade", 0), false);
+        class6Grade.setSelection(prefs.getInt("class6Grade", 0), false);
+        class7Grade.setSelection(prefs.getInt("class7Grade", 0), false);
+
+
+        updateOutputs();
 
 
         //Listeners
@@ -105,6 +127,14 @@ public class GPAActivity extends AppCompatActivity {
             EditText class5Credits = (EditText) findViewById(R.id.Class5Credits);
             EditText class6Credits = (EditText) findViewById(R.id.Class6Credits);
             EditText class7Credits = (EditText) findViewById(R.id.Class7Credits);
+            prefs.edit().putString("class1Credits",class1Credits.getText().toString()).apply();
+            prefs.edit().putString("class2Credits",class2Credits.getText().toString()).apply();
+            prefs.edit().putString("class3Credits",class3Credits.getText().toString()).apply();
+            prefs.edit().putString("class4Credits",class4Credits.getText().toString()).apply();
+            prefs.edit().putString("class5Credits",class5Credits.getText().toString()).apply();
+            prefs.edit().putString("class6Credits",class6Credits.getText().toString()).apply();
+            prefs.edit().putString("class7Credits",class7Credits.getText().toString()).apply();
+
 
             Spinner class1Grade = (Spinner) findViewById(R.id.Class1Grade);
             Spinner class2Grade = (Spinner) findViewById(R.id.Class2Grade);
@@ -113,6 +143,15 @@ public class GPAActivity extends AppCompatActivity {
             Spinner class5Grade = (Spinner) findViewById(R.id.Class5Grade);
             Spinner class6Grade = (Spinner) findViewById(R.id.Class6Grade);
             Spinner class7Grade = (Spinner) findViewById(R.id.Class7Grade);
+
+            prefs.edit().putInt("class1Grade", class1Grade.getSelectedItemPosition()).apply();
+            prefs.edit().putInt("class2Grade", class2Grade.getSelectedItemPosition()).apply();
+            prefs.edit().putInt("class3Grade", class3Grade.getSelectedItemPosition()).apply();
+            prefs.edit().putInt("class4Grade", class4Grade.getSelectedItemPosition()).apply();
+            prefs.edit().putInt("class5Grade", class5Grade.getSelectedItemPosition()).apply();
+            prefs.edit().putInt("class6Grade", class6Grade.getSelectedItemPosition()).apply();
+            prefs.edit().putInt("class7Grade", class7Grade.getSelectedItemPosition()).apply();
+
 
             double[] creditList = new double[]{Double.parseDouble(class1Credits.getText().toString()),
                     Double.parseDouble(class2Credits.getText().toString()),

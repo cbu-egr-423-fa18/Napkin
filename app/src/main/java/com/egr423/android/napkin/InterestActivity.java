@@ -1,5 +1,6 @@
 package com.egr423.android.napkin;
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.text.Editable;
@@ -14,6 +15,7 @@ import android.widget.TextView;
 import java.util.ArrayList;
 
 public class InterestActivity extends AppCompatActivity {
+    SharedPreferences prefs;
 
     private ArrayList<EditText> inputs;
     private double term;
@@ -22,17 +24,24 @@ public class InterestActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        prefs = getSharedPreferences("com.egr423.android.napkin", MODE_PRIVATE);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_calculator_interest);
         annual = true;
 
         //User Input Fields
-            inputs = new ArrayList<EditText>();
-            inputs.add((EditText) findViewById(R.id.principalInput));
-            inputs.add((EditText) findViewById(R.id.interestRateInput));
-            inputs.add((EditText) findViewById(R.id.paymentPeriodInput));
-
+        inputs = new ArrayList<EditText>();
+        inputs.add((EditText) findViewById(R.id.principalInput));
+        inputs.add((EditText) findViewById(R.id.interestRateInput));
+        inputs.add((EditText) findViewById(R.id.paymentPeriodInput));
         Spinner termSelector = (Spinner) findViewById(R.id.termInputSelector);
+
+        inputs.get(0).setText(prefs.getString("principal", "0"));
+        inputs.get(1).setText(prefs.getString("interestRate", "0"));
+        inputs.get(2).setText(prefs.getString("paymentPeriod", "0"));
+        termSelector.setSelection(prefs.getInt("termSelector", 0), false);
+        updateOutputs();
+
 
         //Set listeners
         for(EditText e: inputs){
@@ -87,8 +96,14 @@ public class InterestActivity extends AppCompatActivity {
     private void updateOutputs(){
         //setup
         double monthlyPayment = 0;
+        Spinner termSelector = (Spinner) findViewById(R.id.termInputSelector);
 
         try {
+
+            prefs.edit().putString("principal",((EditText) findViewById(R.id.principalInput)).getText().toString()).apply();
+            prefs.edit().putString("interestRate",((EditText) findViewById(R.id.interestRateInput)).getText().toString()).apply();
+            prefs.edit().putString("paymentPeriod",((EditText) findViewById(R.id.paymentPeriodInput)).getText().toString()).apply();
+            prefs.edit().putInt("termSelector", termSelector.getSelectedItemPosition()).apply();
             //calculation of monthly payment
             //take input values
             double principal = Double.parseDouble(((EditText) findViewById(R.id.principalInput)).getText().toString());

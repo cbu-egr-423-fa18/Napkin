@@ -1,5 +1,6 @@
 package com.egr423.android.napkin;
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.text.Editable;
@@ -9,9 +10,11 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 public class MortgageActivity extends AppCompatActivity {
+    SharedPreferences prefs;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        prefs = getSharedPreferences("com.egr423.android.napkin", MODE_PRIVATE);
         getWindow().setSoftInputMode(
                 WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
         super.onCreate(savedInstanceState);
@@ -21,6 +24,12 @@ public class MortgageActivity extends AppCompatActivity {
         EditText mortgageAmount = (EditText) findViewById(R.id.mortgageAmountInput);
         EditText interestRate = (EditText) findViewById(R.id.interestRateInput);
         EditText mortgagePeriod = (EditText) findViewById(R.id.mortgagePeriodInput);
+
+        mortgageAmount.setText(prefs.getString("mortageAmount", "0"), TextView.BufferType.EDITABLE);
+        interestRate.setText(prefs.getString("interestRateMortage", "0"), TextView.BufferType.EDITABLE);
+        mortgagePeriod.setText(prefs.getString("mortagePeriod", "0"), TextView.BufferType.EDITABLE);
+        updateOutputs();
+
 
         // Each input needs to have an addTextChangedListener to dynamically change the outputs
         mortgageAmount.addTextChangedListener(new TextWatcher() {
@@ -78,6 +87,10 @@ public class MortgageActivity extends AppCompatActivity {
             EditText mortgageAmountInput = (EditText) findViewById(R.id.mortgageAmountInput);
             EditText interestRateInput = (EditText) findViewById(R.id.interestRateInput);
             EditText mortgagePeriodInput = (EditText) findViewById(R.id.mortgagePeriodInput);
+
+            prefs.edit().putString("mortageAmount",mortgageAmountInput.getText().toString()).apply();
+            prefs.edit().putString("interestRateMortage",interestRateInput.getText().toString()).apply();
+            prefs.edit().putString("mortagePeriod",mortgagePeriodInput.getText().toString()).apply();
 
             // Input values
             double mortgageAmount = Double.parseDouble(mortgageAmountInput.getText().toString());
