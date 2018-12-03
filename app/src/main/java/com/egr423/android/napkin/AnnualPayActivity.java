@@ -1,9 +1,7 @@
 package com.egr423.android.napkin;
 
-import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.text.Editable;
 import android.text.InputFilter;
@@ -14,6 +12,16 @@ import android.view.WindowManager;
 
 public class AnnualPayActivity extends AppCompatActivity {
     SharedPreferences prefs;
+
+    // Input Variables
+    public double hourlyPay;
+    public double annualPay;
+    public double workHoursPerWeek;
+    public double workWeeksPerYear;
+
+    // Output Variables
+    public double expectedHourlyPay;
+    public double expectedAnnualPay;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -115,17 +123,17 @@ public class AnnualPayActivity extends AppCompatActivity {
             prefs.edit().putString("workWeeksPerYear",workWeeksPerYearInput.getText().toString()).apply();
 
             // Input values
-            double hourlyPay = Double.parseDouble(hourlyPayInput.getText().toString());
-            double annualPay = Double.parseDouble(annualPayInput.getText().toString());
-            double workHoursPerWeek = Double.parseDouble(workHoursPerWeekInput.getText().toString());
-            double workWeeksPerYear = Double.parseDouble(workWeeksPerYearInput.getText().toString());
+            hourlyPay = Double.parseDouble(hourlyPayInput.getText().toString());
+            annualPay = Double.parseDouble(annualPayInput.getText().toString());
+            workHoursPerWeek = Double.parseDouble(workHoursPerWeekInput.getText().toString());
+            workWeeksPerYear = Double.parseDouble(workWeeksPerYearInput.getText().toString());
 
             // Outputs
             TextView hourlyPayOutput = (TextView) findViewById(R.id.totalCostOfMortgageOutput);
             TextView annualPayOutput = (TextView) findViewById(R.id.annualPayOutputDisplay);
 
-            double expectedHourlyPay = annualPay / (workHoursPerWeek * workWeeksPerYear);
-            double expectedAnnualPay = hourlyPay * workHoursPerWeek * workWeeksPerYear;
+            expectedHourlyPay = annualPay / (workHoursPerWeek * workWeeksPerYear);
+            expectedAnnualPay = hourlyPay * workHoursPerWeek * workWeeksPerYear;
 
             // Update the outputs with dollar signs and only 2 decimals
             hourlyPayOutput.setText(String.format("$%s", String.format("%.2f", expectedHourlyPay)));
