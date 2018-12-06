@@ -11,7 +11,7 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
 
-public class LenthActivity extends AppCompatActivity {
+public class LengthActivity extends AppCompatActivity {
     private double inchToMeter = 0.0254;
     private double footToMeter = 0.3048;
     private double mileToMeter = 1609.344;

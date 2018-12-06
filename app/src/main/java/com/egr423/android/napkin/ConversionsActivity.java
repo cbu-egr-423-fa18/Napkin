@@ -49,7 +49,7 @@ public class ConversionsActivity extends AppCompatActivity {
             cardView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    Intent intent = new Intent(ConversionsActivity.this, LenthActivity.class);
+                    Intent intent = new Intent(ConversionsActivity.this, LengthActivity.class);
                     startActivity(intent);
 
                 }

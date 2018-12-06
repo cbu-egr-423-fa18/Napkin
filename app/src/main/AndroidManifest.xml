@@ -44,7 +44,7 @@
         </activity>
         <activity android:name=".VolumeActivity">
         </activity>
-        <activity android:name=".LenthActivity">
+        <activity android:name=".LengthActivity">
         </activity>
         <activity android:name=".TemperatureActivity">
         </activity>
