@@ -41,7 +41,7 @@
                 android:layout_marginTop="10dp"
                 android:background="@color/cardview_shadow_end_color"
                 android:fontFamily="casual"
-                android:text="Mortage"
+                android:text="Mortgage"
                 android:textAlignment="center"
                 android:textAllCaps="false"
                 android:textAppearance="@style/TextAppearance.AppCompat.Caption"
@@ -79,7 +79,7 @@
                         android:layout_height="wrap_content"
                         android:layout_alignParentStart="true"
                         android:layout_below="@+id/textView"
-                        android:text="Mortage Amount:"
+                        android:text="Mortgage Amount:"
                         android:textColor="@android:color/black"
                         android:textSize="18sp" />
 
@@ -113,7 +113,7 @@
                         android:id="@+id/mortgagePeriodTitle"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Mortage Period (Years):"
+                        android:text="Mortgage Period (Years):"
                         android:textColor="@android:color/black"
                         android:textSize="18sp" />
 
@@ -135,7 +135,7 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentStart="true"
                 android:layout_below="@+id/textView2"
-                android:text="Total Cost of Mortage:"
+                android:text="Total Cost of Mortgage:"
                 android:textColor="@android:color/black"
                 android:textSize="18sp" />
 
